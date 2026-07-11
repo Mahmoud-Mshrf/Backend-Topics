@@ -1,0 +1,7 @@
+@baseUrl = https://localhost:7070
+
+### Full Request (Scoped)
+GET {{baseUrl}}/check
+
+### Full Request (Scoped)
+GET {{baseUrl}}/check2

@@ -1,4 +1,3 @@
 <Solution>
   <Project Path="ConfigurationExplanation/ConfigurationExplanation.csproj" />
-  <Project Path="DependencyInjectionExplanation/DependencyInjectionExplanation.csproj" />
 </Solution>

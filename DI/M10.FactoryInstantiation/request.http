@@ -1,0 +1,5 @@
+@baseUrl = https://localhost:7070
+
+### 
+
+{{baseUrl}}/pay/100
