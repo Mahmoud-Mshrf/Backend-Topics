@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "DependencyInjectionExplanation/1.0.0": {
+        "runtime": {
+          "DependencyInjectionExplanation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DependencyInjectionExplanation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
