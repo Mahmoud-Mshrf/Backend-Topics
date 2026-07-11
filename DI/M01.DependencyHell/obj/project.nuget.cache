@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZAD8EKgGKJU=",
+  "dgSpecHash": "uTfhAqTvot8=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\DI\\M01.DependencyHell\\M01.DependencyHell.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.17\\microsoft.netcore.app.ref.9.0.17.nupkg.sha512",
-    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.17\\microsoft.windowsdesktop.app.ref.9.0.17.nupkg.sha512",
-    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.17\\microsoft.aspnetcore.app.ref.9.0.17.nupkg.sha512",
-    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.17\\microsoft.netcore.app.host.win-x64.9.0.17.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\DI\\M01.DependencyHell\\M01.DependencyHell.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
