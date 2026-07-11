@@ -1,0 +1,11 @@
+Configuration Providers :
+    - System environment variables 
+    - Project-specific environment variables (from launchSetting.json )
+    - Command-line arguments => passed at runtime (dotnet run --urls="https://localhost:5000" => now it will listen on this not on the value in the launchSetting) 
+    - user secrets :
+        dotnet user-secrets init (to initialize users-secrets)
+        dotnet users-secrets set "Key" "value"
+    - file Configuration Providers (.json,.ini,.xml)
+    - In-memory object => dynamic runtime
+        
+

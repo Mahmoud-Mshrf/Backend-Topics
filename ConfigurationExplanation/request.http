@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:5026
+
+### getting the value of a key from the configuration from environment variables from launchSettings.json file
+GET {{baseUrl}}/AspNetCore_Environment 
