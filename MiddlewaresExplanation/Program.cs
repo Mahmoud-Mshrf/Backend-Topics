@@ -29,5 +29,8 @@ app.Run(async(HttpContext context) =>
 {
    await context.Response.WriteAsJsonAsync("terminal middleware , ends of pipeline ");
 });
+
+// don't change anything in the response (status code or headers once you write to it (the write done first))
 app.Run();
+
 
