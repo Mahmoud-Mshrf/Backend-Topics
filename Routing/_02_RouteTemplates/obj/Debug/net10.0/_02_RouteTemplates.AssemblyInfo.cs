@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("_02_RouteTemplates")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69753ef6b51abf0ce6a647b5d04a3bdc576a49cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18debfa62d633b64edc9f21507281ccc32603dd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("_02_RouteTemplates")]
 [assembly: System.Reflection.AssemblyTitleAttribute("_02_RouteTemplates")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

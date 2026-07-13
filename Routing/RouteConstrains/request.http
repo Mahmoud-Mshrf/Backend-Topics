@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:5152
+###
+GET {{baseUrl}}/int/50
+###
+GET {{baseUrl}}/date/2024-03-08
+###
+GET {{baseUrl}}/minlength/MahmoudMshrf
+###
+GET {{baseUrl}}/range/Mahmoudddddddd
+###
+GET {{baseUrl}}/decimal/1.002
+
+###
+GET {{baseUrl}}/validmonth/1
+
+###
+GET {{baseUrl}}/validmonthwithint/12
