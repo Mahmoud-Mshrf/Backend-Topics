@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/ModelBinding/">
+    <Project Path="ModelBinding/_01_RouteParams/_01_RouteParams.csproj" />
+  </Folder>
   <Folder Name="/Routing/">
     <Project Path="Routing/LinkGeneration/LinkGeneration.csproj" />
     <Project Path="Routing/RouteConstrains/RouteConstrains.csproj" />

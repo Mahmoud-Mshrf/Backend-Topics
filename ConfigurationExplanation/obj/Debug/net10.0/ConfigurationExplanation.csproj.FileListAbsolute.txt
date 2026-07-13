@@ -27,3 +27,4 @@ C:\Users\Mahmoud-PC\Desktop\Metigator Course\ConfigurationExplanation\obj\Debug\
 C:\Users\Mahmoud-PC\Desktop\Metigator Course\ConfigurationExplanation\obj\Debug\net10.0\ConfigurationExplanation.pdb
 C:\Users\Mahmoud-PC\Desktop\Metigator Course\ConfigurationExplanation\obj\Debug\net10.0\ConfigurationExplanation.genruntimeconfig.cache
 C:\Users\Mahmoud-PC\Desktop\Metigator Course\ConfigurationExplanation\obj\Debug\net10.0\ref\ConfigurationExplanation.dll
+C:\Users\Mahmoud-PC\Desktop\Metigator Course\ConfigurationExplanation\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

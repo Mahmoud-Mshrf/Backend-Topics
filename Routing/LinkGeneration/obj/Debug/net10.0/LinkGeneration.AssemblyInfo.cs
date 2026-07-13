@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinkGeneration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+956c6a832e46caf8bd70558a4dad78e6a3ecafd6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3c439902a5e15f5af127c7c8b3e65538eb87fa3")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinkGeneration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinkGeneration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
