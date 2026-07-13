@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:5133
+###
+GET {{baseUrl}}/generateactivationurl/1
+###

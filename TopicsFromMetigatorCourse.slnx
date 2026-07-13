@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Routing/">
+    <Project Path="Routing/LinkGeneration/LinkGeneration.csproj" />
     <Project Path="Routing/RouteConstrains/RouteConstrains.csproj" />
     <Project Path="Routing/_01_WhatIsRouting/_01_WhatIsRouting.csproj" />
     <Project Path="Routing/_02_RouteTemplates/_02_RouteTemplates.csproj" />
