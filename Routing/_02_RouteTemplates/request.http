@@ -1,0 +1,13 @@
+@baseUrl = http://localhost:5095
+###
+GET {{baseUrl}}/controller
+###
+GET {{baseUrl}}/products/20
+###
+GET {{baseUrl}}/date/20-11-2001
+###
+GET {{baseUrl}}/
+###
+GET {{baseUrl}}/20
+###
+GET {{baseUrl}}/info/all/user/go/home
