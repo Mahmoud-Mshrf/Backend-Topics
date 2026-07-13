@@ -1,0 +1,5 @@
+@baseUrl = http://localhost:5192
+
+###
+GET {{baseUrl}}/api
+X-Api-Version : "Version 01"

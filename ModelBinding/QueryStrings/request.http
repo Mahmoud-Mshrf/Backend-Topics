@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:5001
+
+###
+GET {{baseUrl}}/minimalreq?page=10&pageSize=10
+###
+GET {{baseUrl}}/minimalreq-array?nums=10&nums=20
+
