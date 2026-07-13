@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Routing/">
+    <Project Path="Routing/_01_WhatIsRouting/_01_WhatIsRouting.csproj" />
+  </Folder>
   <Project Path="ConfigurationExplanation/ConfigurationExplanation.csproj" />
   <Project Path="MiddlewaresExplanation/MiddlewaresExplanation.csproj" />
 </Solution>
