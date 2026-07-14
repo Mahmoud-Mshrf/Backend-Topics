@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "_01_ControllerApi_Basics/1.0.0": {
+        "runtime": {
+          "_01_ControllerApi_Basics.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "_01_ControllerApi_Basics/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
