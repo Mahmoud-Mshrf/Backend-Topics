@@ -1,0 +1,5 @@
+@baseUrl = http://localhost:5188
+
+###
+GET {{baseUrl}}/preferences
+Cookie: lang=AR;theme=dark;timeZone=Egypt
