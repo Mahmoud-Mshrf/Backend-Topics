@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/ModelBinding/">
+    <Project Path="ModelBinding/BodyBinding/BodyBinding.csproj" />
+    <Project Path="ModelBinding/ModelBindingFromForms/ModelBindingFromForms.csproj" />
     <Project Path="ModelBinding/QueryStrings/QueryStrings.csproj" />
     <Project Path="ModelBinding/RequestHeadersBinding/RequestHeadersBinding.csproj" />
     <Project Path="ModelBinding/_01_RouteParams/_01_RouteParams.csproj" />

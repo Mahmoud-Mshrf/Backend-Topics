@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:5129
+###
+GET {{baseUrl}}/fromform
+Content-Type: application/x-www-form-urlencoded
+
+name=Mahmoud&age=20
+
+###
+Post {{baseUrl}}/upload
+Content-Type:multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename ="invoice.png"
+Content-Type: image/png
+
+< D:/invoice.png
+--MyBoundary--
