@@ -20,4 +20,17 @@ public class PreferenceSController : ControllerBase
             timeZone
         });
     }
+    [HttpHead]
+    public IActionResult GetPreferencesfromHead()
+    {
+        Response.Cookies.Append("token","123ABC");
+        Response.Cookies.Append("refreshToken","refresh-123ABC");
+        return Ok();
+    }
+    [HttpOptions]
+    public IActionResult getOptions()
+    {
+        Response.Headers.Append("Allow",new string[]{"Put ","Get ","Patch ","Delete ","Post "});
+        return Ok();
+    }
 }

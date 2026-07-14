@@ -3,3 +3,9 @@
 ###
 GET {{baseUrl}}/preferences
 Cookie: lang=AR;theme=dark;timeZone=Egypt
+
+###
+HEAD {{baseUrl}}/preferences
+
+###
+OPTIONS {{baseUrl}}/preferences
