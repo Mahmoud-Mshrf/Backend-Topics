@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 using _01_ControllerApi_Basics.Data;
 using _01_ControllerApi_Basics.Dtos;
 using _01_ControllerApi_Basics.Models;
@@ -27,8 +28,8 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
         return repository.ExistsById(productId)? Ok() : NotFound();
     }
 
-    [HttpGet("{productId:guid}")]
-    public ActionResult<ProductResponse> GetProduct(Guid productId,bool includeReviews = false)
+    [HttpGet("{productId:guid}",Name = "GetProductById")]
+    public ActionResult<ProductResponse> GetProductById(Guid productId,bool includeReviews = false)
     {
         var product = repository.GetProductById(productId);
         if (product == null)
@@ -56,6 +57,25 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
             TotalCount = repository.GetProductsCount()
         };
         return Ok(result);
+    }
+    [HttpPost]
+    public IActionResult CreateProduct(CreateProductRequest request)
+    {
+        if(repository.ExistsByName(request.Name))
+            return Conflict($"A product with the name {request.Name} is already exists");
+
+        var product = new Product
+        {
+            Id = new Guid(),
+            Name=request.Name,
+            Price=request.Price
+        };
+        repository.AddProduct(product);
+
+        return CreatedAtRoute(routeName: nameof(GetProductById),
+        routeValues: new {productId = product.Id}
+        ,value: ProductResponse.FromModel(product));
+        
     }
 }
 
