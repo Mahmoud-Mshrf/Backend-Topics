@@ -1,4 +1,15 @@
 @baseUrl = http://localhost:5160
 
+@ProductId = 2779ee47-10b0-4bd7-8342-404006aa1392
 ###
-OPTIONS  {{baseUrl}}/api/products
+OPTIONS {{baseUrl}}/api/products
+
+###
+Head {{baseUrl}}/api/products/{{ProductId}}
+
+###
+GET {{baseUrl}}/api/products/{{ProductId}}?includeReviews=true
+
+###
+GET {{baseUrl}}/api/products?page=1&size=20
+
