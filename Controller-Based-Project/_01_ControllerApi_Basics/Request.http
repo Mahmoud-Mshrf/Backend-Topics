@@ -1,4 +1,4 @@
 @baseUrl = http://localhost:5160
 
 ###
-Get {{baseUrl}}/api/products
+OPTIONS  {{baseUrl}}/api/products

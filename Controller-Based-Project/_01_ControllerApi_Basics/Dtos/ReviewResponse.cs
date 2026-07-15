@@ -2,26 +2,26 @@ using _01_ControllerApi_Basics.Models;
 
 namespace _01_ControllerApi_Basics.Dtos;
 
-public class ReviewDto
+public class ReviewResponse
 {
     public Guid Id {get;set;}
     public Guid ProductId {get;set;}
     public string Reviewer {get;set;}
     public int Stars {get;set;}
 
-    private ReviewDto()
+    private ReviewResponse()
     {
         
     }
 
-    public static ReviewDto FromModel(ProductReview review)
+    public static ReviewResponse FromModel(ProductReview review)
     {
         if (review ==null)
         {
             throw new ArgumentNullException(nameof(review));
         }
 
-        return new ReviewDto
+        return new ReviewResponse
         {
             Id=review.Id,
             ProductId=review.ProductId,
@@ -30,7 +30,7 @@ public class ReviewDto
         };
     }
 
-    public static IEnumerable<ReviewDto> FromModels(IEnumerable<ProductReview> reviews)
+    public static IEnumerable<ReviewResponse> FromModels(IEnumerable<ProductReview> reviews)
     {
         if (reviews == null)
         {

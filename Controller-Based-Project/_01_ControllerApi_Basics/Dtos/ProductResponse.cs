@@ -2,25 +2,25 @@ using System.Net.Http.Headers;
 using _01_ControllerApi_Basics.Models;
 
 namespace _01_ControllerApi_Basics.Dtos;
-public class ProductDto
+public class ProductResponse
 {
     public Guid Id {get;set;}
     public string Name {get;set;}
     public decimal Price {get;set;}
-    public List<ReviewDto>? reviews {get;set;} = default;
+    public List<ReviewResponse>? reviews {get;set;} = default;
 
-    private  ProductDto()
+    private  ProductResponse()
     {
         
     }
-    public static ProductDto FromModel(Product product,IEnumerable<ProductReview>? reviews = null)
+    public static ProductResponse FromModel(Product product,IEnumerable<ProductReview>? reviews = null)
     {
         if (product == null)
         {
             throw new ArgumentNullException(nameof(product));
         }
 
-        var response = new ProductDto
+        var response = new ProductResponse
         {
             Id=product.Id,
             Name=product.Name,
@@ -29,11 +29,11 @@ public class ProductDto
 
         if (reviews != null)
         {
-            response.reviews = ReviewDto.FromModels(reviews).ToList();
+            response.reviews = ReviewResponse.FromModels(reviews).ToList();
         }
         return response;
     }
-    public static IEnumerable<ProductDto> FromModels(IEnumerable<Product> products)
+    public static IEnumerable<ProductResponse> FromModels(IEnumerable<Product> products)
     {
         if (products == null)
         {
