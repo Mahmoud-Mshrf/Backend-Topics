@@ -161,7 +161,7 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
         return Ok(new {id,status = requested ? "Processing": "Completed"});
     }
 
-    [HttpGet("report")]
+    [HttpGet("in-memory-report")]
     public IActionResult Report()
     {
         var products = repository.GetProductsPage(1,100);
@@ -178,6 +178,26 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
         var bytes = Encoding.UTF32.GetBytes(csvBuilder.ToString());
 
         return File(bytes,"text/csv","Products_report.csv");
+    }
+    [HttpGet("physical-report")]
+    public IActionResult PhysicalReport()
+    {
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(),"Files","report.csv");
+        return PhysicalFile(filePath,"text/csv","report.csv");
+    }
+    
+    // temp redirect :
+    [HttpGet("old-products")]
+    public IActionResult GetRedirect()
+    {
+        return Redirect("/api/products/temp-products");
+    }
+
+    [HttpGet("temp-products")]
+    public IActionResult TempProducts()
+    {
+        return Ok(new {Message = "You are in the temp endpoint"});
+
     }
 }
 

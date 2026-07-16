@@ -59,4 +59,10 @@ Post {{baseUrl}}/api/products/process
 GET {{baseUrl}}/api/products/status/{{processId}}
 
 ###
-GET {{baseUrl}}/api/products/report
+GET {{baseUrl}}/api/products/in-memory-report
+
+###
+GET {{baseUrl}}/api/products/physical-report
+
+###
+GET {{baseUrl}}/api/products/old-products

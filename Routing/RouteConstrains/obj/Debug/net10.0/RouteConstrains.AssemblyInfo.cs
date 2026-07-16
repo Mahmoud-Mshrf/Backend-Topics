@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RouteConstrains")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ee5e6ffc55b20c8836e982e60656f33a22cd6e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6e5fa6905189cc897d6d49cd4624a50f65785eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("RouteConstrains")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RouteConstrains")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
