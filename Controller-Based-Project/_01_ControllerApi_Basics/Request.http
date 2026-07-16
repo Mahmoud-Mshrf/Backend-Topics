@@ -50,3 +50,10 @@ Content-Type: application/json-patch+json
 
 ###
 DELETE {{baseUrl}}/api/products/{{ProductId}}
+
+###
+Post {{baseUrl}}/api/products/process
+
+@processId = 5cacc212-68c0-4825-b29e-f5e4582d3dbe
+###
+GET {{baseUrl}}/api/products/status/{{processId}}

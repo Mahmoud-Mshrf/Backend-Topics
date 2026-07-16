@@ -143,6 +143,21 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
         }
         return NoContent();
     }
+
+    // accepted response
+    [HttpPost("process")]
+    public IActionResult Process()
+    {
+        var id = Guid.NewGuid();
+
+        return Accepted($"api/products/status/{id}",new {id,status = "Processing"});
+    }
+    [HttpGet("status/{id:guid}")]
+    public IActionResult Process(Guid id)
+    {
+        bool requested = false;
+        return Ok(new {id,status = requested ? "Processing": "Completed"});
+    }
 }
 
 
