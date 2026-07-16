@@ -57,3 +57,6 @@ Post {{baseUrl}}/api/products/process
 @processId = 5cacc212-68c0-4825-b29e-f5e4582d3dbe
 ###
 GET {{baseUrl}}/api/products/status/{{processId}}
+
+###
+GET {{baseUrl}}/api/products/report

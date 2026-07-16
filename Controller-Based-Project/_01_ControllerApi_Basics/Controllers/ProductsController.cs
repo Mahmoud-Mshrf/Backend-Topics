@@ -1,5 +1,7 @@
+using System.Net.Mime;
 using System;
 using System.Reflection.Metadata.Ecma335;
+using System.Text;
 using _01_ControllerApi_Basics.Data;
 using _01_ControllerApi_Basics.Dtos;
 using _01_ControllerApi_Basics.Models;
@@ -157,6 +159,25 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
     {
         bool requested = false;
         return Ok(new {id,status = requested ? "Processing": "Completed"});
+    }
+
+    [HttpGet("report")]
+    public IActionResult Report()
+    {
+        var products = repository.GetProductsPage(1,100);
+
+        var csvBuilder = new StringBuilder();
+
+        csvBuilder.AppendLine("Id,Name,Price");
+        
+        foreach (var p in products)
+        {
+            csvBuilder.AppendLine($"{p.Id},{p.Name},{p.Price}");
+        }
+
+        var bytes = Encoding.UTF32.GetBytes(csvBuilder.ToString());
+
+        return File(bytes,"text/csv","Products_report.csv");
     }
 }
 
