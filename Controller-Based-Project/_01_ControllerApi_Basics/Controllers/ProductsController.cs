@@ -127,6 +127,22 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
         }
         return NoContent();
     }
+    [HttpDelete("{productId:guid}")]
+    public IActionResult DeleteProduct(Guid productId)
+    {
+        if (repository.ExistsById(productId))
+        {
+            return NotFound("Product not found");
+        }
+
+        var succeeded = repository.DeleteProduct(productId);
+
+        if (!succeeded)
+        {
+            return StatusCode(500,"Internal server error");
+        }
+        return NoContent();
+    }
 }
 
 

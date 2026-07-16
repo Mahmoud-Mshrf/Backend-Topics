@@ -47,3 +47,6 @@ Content-Type: application/json-patch+json
         "value":"name after patch"
     }
 ]
+
+###
+DELETE {{baseUrl}}/api/products/{{ProductId}}
