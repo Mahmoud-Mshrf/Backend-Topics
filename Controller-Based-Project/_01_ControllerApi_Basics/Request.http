@@ -18,7 +18,32 @@ POST {{baseUrl}}/api/products
 Content-Type: application/json
 
 {
+    "name":"Product 5",
+    "price":12.00
+}
+
+###
+PUT  {{baseUrl}}/api/products/{{ProductId}}
+Content-Type: application/json
+
+{
     "name":"Product 3",
     "price":12.00
 }
 
+###
+PATCH {{baseUrl}}/api/products/{{ProductId}}
+Content-Type: application/json-patch+json
+
+[
+    {
+        "op":"replace",
+        "path":"/price",
+        "value":45.00
+    },
+    {
+        "op":"replace",
+        "path":"/name",
+        "value":"name after patch"
+    }
+]
