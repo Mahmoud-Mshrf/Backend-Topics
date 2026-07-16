@@ -190,13 +190,27 @@ public class ProductsController(ProductRepository repository) : ControllerBase /
     [HttpGet("old-products")]
     public IActionResult GetRedirect()
     {
-        return Redirect("/api/products/temp-products");
+        return Redirect("/api/products/temp-products");// 302 status code
     }
 
     [HttpGet("temp-products")]
     public IActionResult TempProducts()
     {
         return Ok(new {Message = "You are in the temp endpoint"});
+
+    }
+
+    // Permanent redirect :
+    [HttpGet("legacy-products")]
+    public IActionResult GetPermanentRedirect()
+    {
+        return RedirectPermanent("/api/products/permanent-products");// 301 status code
+    }
+
+    [HttpGet("permanent-products")]
+    public IActionResult PermanentProducts()
+    {
+        return Ok(new {Message = "You are in the permanent endpoint"});
 
     }
 }
