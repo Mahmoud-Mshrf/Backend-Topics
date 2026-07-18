@@ -1,13 +1,14 @@
 @baseUrl = http://localhost:5122
 @productId = 2779ee47-10b0-4bd7-8342-404006aa1392
-###
-GET {{baseUrl}}/text
 
 ###
-GET {{baseUrl}}/json
+GET {{baseUrl}}/api/products/text
 
 ###
-GET {{baseUrl}}/products/i-result/{{productId}}
+GET {{baseUrl}}/api/products/json
 
 ###
-GET {{baseUrl}}/products/type-result/{{productId}}
+GET {{baseUrl}}/api/products/i-result/{{productId}}
+
+###
+GET {{baseUrl}}/api/products/type-result/{{productId}}
