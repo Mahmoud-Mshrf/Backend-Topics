@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Controller-Based-Project/">
+    <Project Path="Controller-Based-Project/Content_Negotiation/Content_Negotiation.csproj" />
     <Project Path="Controller-Based-Project/_01_ControllerApi_Basics/_01_ControllerApi_Basics.csproj" />
   </Folder>
   <Folder Name="/ModelBinding/">
