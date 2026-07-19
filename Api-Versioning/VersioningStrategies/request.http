@@ -10,6 +10,12 @@ GET {{baseUrl}}/api/v1.0/products/{{productId}}
 ###
 GET {{baseUrl}}/api/v2.0/products/{{productId}}
 
+
+
+
+
+
+
 ###
 GET {{baseUrl}}/api/products/{{productId}}
 
@@ -18,3 +24,34 @@ GET {{baseUrl}}/api/products/{{productId}}?api-version=1.0
 
 ###
 GET {{baseUrl}}/api/products/{{productId}}?api-version=2.0
+
+
+
+
+
+
+
+###
+GET {{baseUrl}}/api/products/{{productId}}
+
+###
+GET {{baseUrl}}/api/products/{{productId}}
+Api-version : 1.0
+###
+GET {{baseUrl}}/api/products/{{productId}}
+Api-version : 2.0
+
+
+
+
+
+###
+GET {{baseUrl}}/api/products/{{productId}}
+
+###
+GET {{baseUrl}}/api/products/{{productId}}
+Accept: application/json;v=1.0
+
+###
+GET {{baseUrl}}/api/products/{{productId}}
+Accept: application/json;v=2.0

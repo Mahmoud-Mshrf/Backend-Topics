@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Minimal_WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+066aa8b3a267e46e6b4f488b026cafd094fd1f98")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a627405f038a2acc5feab494e5289671c43ac580")]
 [assembly: System.Reflection.AssemblyProductAttribute("Minimal_WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Minimal_WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
