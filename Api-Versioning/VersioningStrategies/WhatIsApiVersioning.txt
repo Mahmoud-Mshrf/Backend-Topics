@@ -1,0 +1,80 @@
+**API Versioning** is a way to support **multiple versions of the same API** without breaking existing clients.
+
+### Simple example
+
+Suppose your API starts with:
+
+```http
+GET /api/products
+```
+
+It returns:
+
+```json
+{
+  "id": 1,
+  "name": "Laptop"
+}
+```
+
+Months later, you change the response to:
+
+```json
+{
+  "id": 1,
+  "name": "Laptop",
+  "price": 1200
+}
+```
+
+Or you rename `name` to `productName`.
+
+Existing mobile apps or frontend applications that depend on the old response may stop working.
+
+Instead, you create a new version:
+
+```http
+GET /api/v1/products   // Old version
+GET /api/v2/products   // New version
+```
+
+* Existing clients continue using **v1**.
+* New clients use **v2**.
+
+### Why use API versioning?
+
+* ✅ Avoid breaking existing applications.
+* ✅ Allow old and new clients to work at the same time.
+* ✅ Introduce new features gradually.
+* ✅ Give clients time to migrate.
+
+### Common ways to version an API
+
+1. **URL versioning (most common)**
+
+   ```
+   /api/v1/products
+   /api/v2/products
+   ```
+
+2. **Query string**
+
+   ```
+   /api/products?version=1
+   ```
+
+3. **Header**
+
+   ```
+   Api-Version: 1
+   ```
+
+4. **Media type (Accept header)**
+
+   ```
+   Accept: application/json;version=1
+   ```
+
+### In one sentence
+
+**API versioning is a strategy that lets you evolve your API while keeping older clients working by exposing different versions of the API simultaneously.**
