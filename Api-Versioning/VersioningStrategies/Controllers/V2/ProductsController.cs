@@ -11,7 +11,8 @@ using VersioningStrategies.Dtos.V2;
 namespace VersioningStrategies.Controllers.V2;
 [ApiVersion("2.0")]
 [ApiController]// enable model validation using data annotations and return problem details as error response + [FromBody],[FromQuery]and...etc binding
-[Route("api/v{version:apiVersion}/[controller]")]
+// [Route("api/v{version:apiVersion}/[controller]")]// this if we use url versioning
+[Route("api/[controller]")]// this if we use url versioning
 public class ProductsController(ProductRepository repository) : ControllerBase // enable direct dependency injection for services in the constructor 
 {
 

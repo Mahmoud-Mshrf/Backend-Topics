@@ -12,7 +12,7 @@ namespace VersioningStrategies.Controllers.V1;
 [ApiVersion("1.0")]
 [Route("api/[controller]")]// specify the global route for the controller
 [ApiController]// enable model validation using data annotations and return problem details as error response + [FromBody],[FromQuery]and...etc binding
-[Route("api/v{version:apiVersion}/[controller]")]
+// [Route("api/v{version:apiVersion}/[controller]")]// this if we use url versioning
 public class ProductsController(ProductRepository repository) : ControllerBase // enable direct dependency injection for services in the constructor 
 {
 
