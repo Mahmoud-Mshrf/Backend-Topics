@@ -3,6 +3,9 @@
     <Project Path="Controller-Based-Project/Content_Negotiation/Content_Negotiation.csproj" />
     <Project Path="Controller-Based-Project/_01_ControllerApi_Basics/_01_ControllerApi_Basics.csproj" />
   </Folder>
+  <Folder Name="/IntegrationWithDatabase/">
+    <Project Path="IntegrationWithDatabase/WebAppWithEntityFramework/WebAppWithEntityFramework.csproj" />
+  </Folder>
   <Folder Name="/Minimal-Api-Project/">
     <Project Path="Minimal-Api-Project/Minimal_WebApi/Minimal_WebApi.csproj" />
   </Folder>

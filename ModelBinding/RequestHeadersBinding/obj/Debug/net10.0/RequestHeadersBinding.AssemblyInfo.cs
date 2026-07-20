@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RequestHeadersBinding")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a627405f038a2acc5feab494e5289671c43ac580")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d65157696accc0a5f84edab6cc9fc3d272c28c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("RequestHeadersBinding")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RequestHeadersBinding")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
