@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("M04.ConstructorInjection")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d65157696accc0a5f84edab6cc9fc3d272c28c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdda90466a646a5fa35187bbe701977147b8a52b")]
 [assembly: System.Reflection.AssemblyProductAttribute("M04.ConstructorInjection")]
 [assembly: System.Reflection.AssemblyTitleAttribute("M04.ConstructorInjection")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj": {}
+    "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj": {
+    "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+        "projectUniqueName": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
         "projectName": "WebAppWithEntityFramework",
-        "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+        "projectPath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
         "packagesPath": "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\obj\\",
+        "outputPath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,26 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.EntityFramework.SqlServer": {
+              "target": "Package",
+              "version": "[6.5.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[10.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
