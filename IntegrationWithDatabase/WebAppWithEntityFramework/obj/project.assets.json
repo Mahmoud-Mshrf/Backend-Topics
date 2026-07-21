@@ -3838,11 +3838,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+      "projectUniqueName": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
       "projectName": "WebAppWithEntityFramework",
-      "projectPath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+      "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
       "packagesPath": "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\obj\\",
+      "outputPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

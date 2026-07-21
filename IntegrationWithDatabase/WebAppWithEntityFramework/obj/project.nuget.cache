@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sQFvaoaVh5M=",
+  "dgSpecHash": "ES8hy6RDbwQ=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+  "projectFilePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",
@@ -70,9 +70,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
-      "projectPath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+      "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
       "warningLevel": 1,
-      "filePath": "c:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
+      "filePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\IntegrationWithDatabase\\WebAppWithEntityFramework\\WebAppWithEntityFramework.csproj",
       "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
       "targetGraphs": [
         "net10.0"
