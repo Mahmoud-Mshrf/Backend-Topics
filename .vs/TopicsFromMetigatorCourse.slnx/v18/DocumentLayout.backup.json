@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F303E65A-5503-5745-7FD4-5B04E1F3A6A3}|ModelBinding\\_01_RouteParams\\_01_RouteParams.csproj|c:\\users\\mahmoud-pc\\desktop\\metigator course\\modelbinding\\_01_routeparams\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F303E65A-5503-5745-7FD4-5B04E1F3A6A3}|ModelBinding\\_01_RouteParams\\_01_RouteParams.csproj|solutionrelative:modelbinding\\_01_routeparams\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F303E65A-5503-5745-7FD4-5B04E1F3A6A3}|ModelBinding\\_01_RouteParams\\_01_RouteParams.csproj|c:\\users\\mahmoud-pc\\desktop\\metigator course\\modelbinding\\_01_routeparams\\request.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{F303E65A-5503-5745-7FD4-5B04E1F3A6A3}|ModelBinding\\_01_RouteParams\\_01_RouteParams.csproj|solutionrelative:modelbinding\\_01_routeparams\\request.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
-              "RelativeToolTip": "ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-13T17:31:46.339Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -47,15 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "request.http",
-              "DocumentMoniker": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelBinding\\_01_RouteParams\\request.http",
-              "RelativeDocumentMoniker": "ModelBinding\\_01_RouteParams\\request.http",
-              "ToolTip": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelBinding\\_01_RouteParams\\request.http",
-              "RelativeToolTip": "ModelBinding\\_01_RouteParams\\request.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-07-13T17:30:39.119Z",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ModelBinding\\_01_RouteParams\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-13T17:31:46.339Z",
               "EditorCaption": ""
             }
           ]

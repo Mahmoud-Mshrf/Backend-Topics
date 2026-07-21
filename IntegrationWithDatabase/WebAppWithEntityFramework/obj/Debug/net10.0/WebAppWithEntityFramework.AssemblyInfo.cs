@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebAppWithEntityFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e9d287f17a256f84cf3c6d1460ab1bbf50eaefc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+056255c61ec361a08df3ff35f65f2c48b491b3c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebAppWithEntityFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebAppWithEntityFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
