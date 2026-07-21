@@ -1,0 +1,55 @@
+@baseUrl = http://localhost:5172
+@ProductId = 2779ee47-10b0-4bd7-8342-404006aa1392
+@NewProduct = 97d31277-57c3-400b-8446-4e9859c4456d
+###
+OPTIONS {{baseUrl}}/api/products
+
+###
+Head {{baseUrl}}/api/products/{{ProductId}}
+
+###
+GET {{baseUrl}}/api/products/{{ProductId}}?includeReviews=true
+
+###
+GET {{baseUrl}}/api/products?page=1&size=20
+
+###
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+    "name":"New Product",
+    "price":12.00
+}
+
+###
+PUT  {{baseUrl}}/api/products/{{ProductId}}
+Content-Type: application/json
+
+{
+    "name":"Product 3",
+    "price":12.00
+}
+
+###
+PATCH {{baseUrl}}/api/products/{{NewProduct}}
+Content-Type: application/json-patch+json
+
+[
+    {
+        "op":"replace",
+        "path":"/price",
+        "value":45.00
+    },
+    {
+        "op":"replace",
+        "path":"/name",
+        "value":"Updated Product"
+    }
+]
+
+###
+DELETE {{baseUrl}}/api/products/{{ProductId}}
+
+###
+GET {{baseUrl}}/api/products/{{NewProduct}}
