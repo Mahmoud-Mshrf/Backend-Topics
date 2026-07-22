@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:5236
+
+###
+Post {{baseUrl}}/api/products/
+Content-Type: application/json
+
+{
+  "name": "Gaming Laptop",
+  "description": "A high-performance gaming laptop with RTX graphics and 32GB RAM.",
+  "sku": "PRD-12345",
+  "price": 1599.99,
+  "stockQuantity": 50,
+  "launchDate": "2026-07-23T00:00:00",
+  "category": 1,
+  "imageUrl": "https://example.com/images/gaming-laptop.jpg",
+  "weight": 2.45,
+  "warrantyPeriodMonths": 24,
+  "isReturnable": true,
+  "returnPolicyDescription": "Returns are accepted within 30 days if the product is in its original condition.",
+  "tags": [
+    "Gaming",
+    "Laptop",
+    "RTX",
+    "Electronics",
+    "Portable"
+  ]
+}
