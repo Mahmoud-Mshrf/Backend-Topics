@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "mKWSgAjF03o=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\ModelValidation\\FluentValidation_MinimalApi\\FluentValidation_MinimalApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512"
+  ],
+  "logs": []
+}
