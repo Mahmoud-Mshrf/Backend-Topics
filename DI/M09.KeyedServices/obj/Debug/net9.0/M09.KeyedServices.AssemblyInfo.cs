@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("M09.KeyedServices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f9c665f99df37f03a855b31c29c0c5a66345518")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b13887343776ce570ff2d5ae77f5794f8a17f277")]
 [assembly: System.Reflection.AssemblyProductAttribute("M09.KeyedServices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("M09.KeyedServices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
