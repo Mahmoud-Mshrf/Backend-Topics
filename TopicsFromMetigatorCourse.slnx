@@ -3,6 +3,14 @@
     <Project Path="Controller-Based-Project/Content_Negotiation/Content_Negotiation.csproj" />
     <Project Path="Controller-Based-Project/_01_ControllerApi_Basics/_01_ControllerApi_Basics.csproj" />
   </Folder>
+  <Folder Name="/Error-Handling/">
+    <Project Path="Error-Handling/_01_DefaultBehaviour/_01_DefaultBehaviour.csproj" />
+  </Folder>
+  <Folder Name="/Filters/">
+    <Project Path="Filters/_01_ActionFilters/_01_ActionFilters.csproj" />
+    <Project Path="Filters/_02_ResultFilters/_02_ResultFilters.csproj" />
+    <Project Path="Filters/_03_ExceptionFilter/_03_ExceptionFilter.csproj" />
+  </Folder>
   <Folder Name="/IntegrationWithDatabase/">
     <Project Path="IntegrationWithDatabase/WebAppWithEntityFramework/WebAppWithEntityFramework.csproj" />
   </Folder>
