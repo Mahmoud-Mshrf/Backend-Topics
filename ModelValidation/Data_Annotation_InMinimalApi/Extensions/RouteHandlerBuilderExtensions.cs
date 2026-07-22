@@ -5,38 +5,72 @@ using Microsoft.AspNetCore.Mvc;
 
 public static class RouteHandlerBuilderExtensions
 {
-    public static  RouteHandlerBuilder Validate<T>(this RouteHandlerBuilder builder)
+    // Extension method that adds validation to a Minimal API endpoint.
+    public static RouteHandlerBuilder Validate<T>(this RouteHandlerBuilder builder)
     {
-        builder.AddEndpointFilter(async(context, next) =>
+        // Add an endpoint filter that runs before the endpoint handler.
+        builder.AddEndpointFilter(async (context, next) =>
         {
-            var argument = context.Arguments.OfType<CreateProductRequest>().FirstOrDefault();
+            // Get the request object of type T from the endpoint arguments.
+            var argument = context.Arguments
+                                  .OfType<T>()
+                                  .FirstOrDefault();
 
+            // If no request object was found, return 400 Bad Request.
             if (argument == null)
             {
                 return Results.Problem(new ProblemDetails
                 {
+                    // Short title for the error.
                     Title = "Bad Request",
-                    Detail = $"{nameof(CreateProductRequest)} is null",
+
+                    // Detailed error message.
+                    Detail = $"{typeof(T).Name} is null",
+
+                    // HTTP status code.
                     Status = StatusCodes.Status400BadRequest
                 });
             }
+
+            // List to store validation errors.
             List<ValidationResult> validationResults = [];
 
-            var isValid = Validator.TryValidateObject(argument,new ValidationContext(argument),validationResults,true);
+            // Validate the object using Data Annotations.
+            var isValid = Validator.TryValidateObject(
+                argument,
+                new ValidationContext(argument),
+                validationResults,
+                validateAllProperties: true);
 
+            // If validation failed...
             if (!isValid)
             {
-                var errorGroups = validationResults.SelectMany(v=> (v.MemberNames.Any() ?  v.MemberNames : new [] {""})
-                                                   .Select(name=> new {name , v.ErrorMessage})
-                                                   .GroupBy(x=>x.name)
-                                                   .ToDictionary(
-                                                      g=>g.Key,
-                                                      g=>g.Select(x=>x.ErrorMessage!).ToArray()
-                                                   ));
+                // Convert validation errors into the format expected by ValidationProblem().
+                var errorGroups = validationResults
+                    // Create one item for each property that has an error.
+                    .SelectMany(v => (v.MemberNames.Any() ? v.MemberNames : new[] { "" })
+                        .Select(name => new
+                        {
+                            name,
+                            v.ErrorMessage
+                        }))
+                    // Group errors by property name.
+                    .GroupBy(x => x.name)
+                    // Convert groups into Dictionary<string, string[]>.
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Select(x => x.ErrorMessage!).ToArray()
+                    );
+
+                // Return a 400 ValidationProblem response.
                 return Results.ValidationProblem(errorGroups);
             }
+
+            // Validation passed, continue to the endpoint handler.
             return await next(context);
         });
+
+        // Return the builder to allow method chaining.
         return builder;
     }
 }
