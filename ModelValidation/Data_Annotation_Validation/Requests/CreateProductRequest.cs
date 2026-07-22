@@ -32,5 +32,7 @@ public class CreateProductRequest
     public bool IsReturnable {get;set;}
     [RequiredIf("IsReturnable",true,ErrorMessage ="Return policy description is required if the product is returnable")]
     public string? ReturnPolicyDescription {get;set;}
+    [MaxLength(5,ErrorMessage ="A maximum of 5 tags is allowed")]
     public List<string> Tags {get;set;} = [];
 }
+

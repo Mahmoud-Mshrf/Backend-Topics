@@ -35,6 +35,6 @@ public class RequiredIfAttribute : ValidationAttribute
             }
         }
 
-        return base.IsValid(value, validationContext);
+        return  ValidationResult.Success;
     } 
 }
