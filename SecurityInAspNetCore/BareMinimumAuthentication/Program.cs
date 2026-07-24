@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)// register services required by authentication services
 .AddCookie();// add cookie authentication and it add CookieAuthenticationDefaults.AuthenticationScheme as Authentication scheme internally even you don't specify it
+
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
@@ -37,6 +38,7 @@ app.MapGet("/user", (HttpContext context) =>
     }
     return Results.Unauthorized();
 });
+
 
 app.MapGet("/logout",async (HttpContext context) =>
 {

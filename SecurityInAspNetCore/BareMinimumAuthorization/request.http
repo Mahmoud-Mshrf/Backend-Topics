@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:5000
+
+### 
+GET {{baseUrl}}/login
+
+### 
+GET {{baseUrl}}/secure
+
+### 
+GET {{baseUrl}}/logout
+
+### 
+GET {{baseUrl}}/manage-employees
+
+### 
+GET {{baseUrl}}/manage-all

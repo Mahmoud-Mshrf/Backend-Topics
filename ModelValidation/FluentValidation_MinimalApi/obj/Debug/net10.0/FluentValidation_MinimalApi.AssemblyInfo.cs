@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluentValidation_MinimalApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06a5953a23566a891e0d203b6b663ad65a369b2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5b7c3dc37d5b3c525dca0f567597c143e8e7922")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluentValidation_MinimalApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluentValidation_MinimalApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
