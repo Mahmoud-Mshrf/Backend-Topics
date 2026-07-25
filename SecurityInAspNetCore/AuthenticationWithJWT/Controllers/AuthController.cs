@@ -29,10 +29,10 @@ public class AuthController(IAuthService authService):ControllerBase
         return Ok(result);
     }
 
-    [HttpGet("refresh-token")]
+    [HttpPost("refresh-token")]
     public async Task<IActionResult> RefreshToken()
     {
-        var token = HttpContext.Request.Cookies["refreshToken"];
+        var token = HttpContext.Request.Cookies["RefreshToken"];
         if (string.IsNullOrEmpty(token))
         {
             return BadRequest("Invalid Token");            

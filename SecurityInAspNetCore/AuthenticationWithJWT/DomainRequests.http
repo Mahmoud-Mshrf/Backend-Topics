@@ -4,45 +4,6 @@
 @taskId = b7cc98df-bcce-4bed-be26-d734797549c8
 
 
-### Register 
-POST {{baseUrl}}/api/auth/register
-Content-Type: application/json
-
-{
-  "firstName": "task-Permissions",
-  "lastName": "task-Permissions",
-  "email": "task.montgomery@example.com",
-  "password": "P@ssw0rd123",
-  "birthDate": "1998-05-14"
-}
-
-### Register ### SuperManager
-POST {{baseUrl}}/api/auth/login
-Content-Type: application/json
-
-{
-  "email": "supermanager@test.com",
-  "password": "Super123!"
-}
-
-### Register ### Manager
-POST {{baseUrl}}/api/auth/login
-Content-Type: application/json
-
-{
-  "email": "manager@test.com",
-  "password": "Manager123!"
-}
-
-### Register ### Employee
-POST {{baseUrl}}/api/auth/login
-Content-Type: application/json
-
-{
-  "email": "employee@test.com",
-  "password": "Employee123!"
-}
-
 ### Get All Projects
 GET {{baseUrl}}/api/projects
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMzMzMzMzMy0zMzMzLTMzMzMtMzMzMy0zMzMzMzMzMzMzMzMiLCJnaXZlbl9uYW1lIjoiVXNlciIsImZhbWlseV9uYW1lIjoiRW1wbG95ZWUiLCJiaXJ0aGRhdGUiOiIxLzEvMjAwMCIsImVtYWlsIjoiZW1wbG95ZWVAdGVzdC5jb20iLCJyb2xlIjoiZW1wbG95ZWUiLCJQZXJtaXNzaW9uIjpbInRhc2s6Y3JlYXRlIiwidGFzazpyZWFkIiwidGFzazp1cGRhdGUiLCJ0YXNrOmRlbGV0ZSIsInRhc2s6YXNzaWduX3VzZXIiLCJ0YXNrOnVwZGF0ZV9zdGF0dXMiLCJ0YXNrOmNvbW1lbnQiXSwibmJmIjoxNzg0OTY2ODI5LCJleHAiOjE3ODQ5Njc3MjksImlhdCI6MTc4NDk2NjgyOSwiaXNzIjoiTG9jYWxob3N0IiwiYXVkIjoiTG9jYWxob3N0In0.G8KTWhw0dgyzjOuG4isCUkP_dEkmOFgrxX8uqrVbB8g
