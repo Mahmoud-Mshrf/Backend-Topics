@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("bd5c491a-f4cf-450b-8a76-69081b27354a")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AuthenticationWithJWT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97f3a563ad51afe0683b6c2e260d2be820a1982a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d702f9e8a5a64ab80a56b5abd5a88eeda8ab923")]
 [assembly: System.Reflection.AssemblyProductAttribute("AuthenticationWithJWT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AuthenticationWithJWT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
