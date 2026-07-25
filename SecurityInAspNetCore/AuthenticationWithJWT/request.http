@@ -4,6 +4,40 @@
 @taskId = b7cc98df-bcce-4bed-be26-d734797549c8
 
 
+### Register 
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "AlexanderMetroveach",
+  "lastName": "Montgomery",
+  "email": "alexander.montgomery@example.com",
+  "password": "P@ssw0rd123",
+  "birthDate": "1998-05-14"
+}
+
+### Register 
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "alexander.montgomery@example.com",
+  "password": "P@ssw0rd123"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Get All Projects
 GET {{baseUrl}}/api/projects
 

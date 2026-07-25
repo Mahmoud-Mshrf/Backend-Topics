@@ -2,8 +2,8 @@ namespace AuthenticationWithJWT.Helpers;
 
 public class JwtOptions
 {
-    public string Issuer;
-    public string Audience;
-    public string SigningKey;
-    public int TokenExpirationInMinutes ;
+    public string? Issuer {get;set;}
+    public string? Audience {get;set;}
+    public string? SigningKey {get;set;}
+    public int TokenExpirationInMinutes {get;set;}
 }

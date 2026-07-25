@@ -24,15 +24,15 @@ builder.Services.AddAuthentication(authOptions =>
     authOptions.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
-    options.TokenValidationParameters = new()
+    options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer= true,
         ValidateAudience = true,
         ValidateIssuerSigningKey= true,
         ValidateLifetime = true,
-        ValidIssuer = jwtOptions!.Issuer,
-        ValidAudience = jwtOptions!.Audience,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions!.SigningKey))
+        ValidIssuer = jwtOptions.Issuer,
+        ValidAudience = jwtOptions.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SigningKey))
     };
 });
 
