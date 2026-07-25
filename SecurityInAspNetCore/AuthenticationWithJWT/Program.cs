@@ -1,8 +1,15 @@
 using System.Reflection.Metadata;
 using System.Text;
+using AuthenticationWithJWT.Data;
 using AuthenticationWithJWT.Helpers;
+using AuthenticationWithJWT.Models;
+using AuthenticationWithJWT.Services.Implementations;
+using AuthenticationWithJWT.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.BearerToken;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client.Extensibility;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,12 +32,15 @@ builder.Services.AddAuthentication(authOptions =>
         ValidateLifetime = true,
         ValidIssuer = jwtOptions!.Issuer,
         ValidAudience = jwtOptions!.Audience,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetValue<string>("SigningKey")!))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions!.SigningKey))
     };
 });
 
 builder.Services.AddAuthorization();
-
+builder.Services.AddDbContext<AppDbContext>(x=>x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IJwtTokenProvider,JwtTokenProvider>();
+builder.Services.AddScoped<IAuthService,AuthService>();
+builder.Services.AddScoped<IPasswordHasher<AppUser>,PasswordHasher<AppUser>>();
 var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
