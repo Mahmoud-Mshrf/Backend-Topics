@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Controller_RFC9457")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00eecc636a8ec60a5db689a01f56f97b028c6f47")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+337e0061155ea3db01f17dd5e86fe59829e21913")]
 [assembly: System.Reflection.AssemblyProductAttribute("Controller_RFC9457")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Controller_RFC9457")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
