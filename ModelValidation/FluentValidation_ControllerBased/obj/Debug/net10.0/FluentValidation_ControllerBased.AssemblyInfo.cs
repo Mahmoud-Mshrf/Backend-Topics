@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluentValidation_ControllerBased")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+337e0061155ea3db01f17dd5e86fe59829e21913")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f5df00d219981330ec40beea167c40fc5a0d235")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluentValidation_ControllerBased")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluentValidation_ControllerBased")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

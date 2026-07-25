@@ -60,6 +60,7 @@ builder.Services.AddScoped<IJwtTokenProvider,JwtTokenProvider>();
 builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<IPasswordHasher<AppUser>,PasswordHasher<AppUser>>();
 var app = builder.Build();
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
