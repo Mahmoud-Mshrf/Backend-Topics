@@ -1,0 +1,68 @@
+@baseUrl = http://localhost:5119
+
+@projectId = f5aae296-97dc-4a2b-a15a-b20ce4780d3a
+@taskId = b7cc98df-bcce-4bed-be26-d734797549c8
+
+
+### Get All Projects
+GET {{baseUrl}}/api/projects
+
+###
+
+### Get Project By Id
+GET {{baseUrl}}/api/projects/{{projectId}}
+
+###
+
+### Create Project
+POST {{baseUrl}}/api/projects
+Content-Type:application/json
+###
+
+### Update Project
+PUT {{baseUrl}}/api/projects/{{projectId}}
+Content-Type:application/json
+###
+
+### Delete Project
+DELETE {{baseUrl}}/api/projects/{{projectId}}
+
+###
+
+### Assign Member To Project
+POST {{baseUrl}}/api/projects/{{projectId}}/members
+
+###
+
+### Get Project Budget
+GET {{baseUrl}}/api/projects/{{projectId}}/budget
+
+###
+
+### Get Task
+GET {{baseUrl}}/api/projects/tasks/{{taskId}}
+
+###
+
+### Create Task
+POST {{baseUrl}}/api/projects/tasks
+Content-Type:application/json
+###
+
+### Assign User To Task
+POST {{baseUrl}}/api/projects/tasks/{{taskId}}/assign
+
+###
+
+### Update Task
+PUT {{baseUrl}}/api/projects/tasks/{{taskId}}
+
+###
+
+### Delete Task
+DELETE {{baseUrl}}/api/projects/tasks/{{taskId}}
+
+###
+
+### Update Task Status
+PUT {{baseUrl}}/api/projects/tasks/{{taskId}}/status
