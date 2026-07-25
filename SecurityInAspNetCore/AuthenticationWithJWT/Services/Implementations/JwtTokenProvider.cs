@@ -14,7 +14,7 @@ namespace AuthenticationWithJWT.Services.Implementations;
 
 public class JwtTokenProvider(IOptions<JwtOptions> jwtOptions) : IJwtTokenProvider
 {
-    public async Task<TokenResponse> GenerateTokenAsync(TokenRequest request)
+    public async Task<GeneratedAccessToken> GenerateTokenAsync(TokenRequest request)
     {
         var issuer = jwtOptions.Value.Issuer;
         var audience = jwtOptions.Value.Audience;
@@ -54,11 +54,10 @@ public class JwtTokenProvider(IOptions<JwtOptions> jwtOptions) : IJwtTokenProvid
         var securityToken = tokenHandler.CreateToken(tokenDescriptor);
         var accessToken =await Task.Run(()=>tokenHandler.WriteToken(securityToken));
 
-        return new TokenResponse()
+        return new GeneratedAccessToken()
         {
-            AccessToken = accessToken,
+            Token = accessToken,
             Expires=tokenDescriptor.Expires,
-            RefreshToken= "12345678910ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         };
     }
 }

@@ -1,10 +1,11 @@
 using AuthenticationWithJWT.Requests;
 using AuthenticationWithJWT.Responses;
+using AuthenticationWithJWT.Services.Implementations;
 
 namespace AuthenticationWithJWT.Services.Interfaces;
 
 public interface IAuthService
 {
-    Task<TokenResponse> GetTokenAsync(LoginCredentials credentials);
+    Task<AuthResult> GetTokenAsync(LoginCredentials credentials);
     Task<ResultDto> RegisterAsync(RegisterRequest request);
 }

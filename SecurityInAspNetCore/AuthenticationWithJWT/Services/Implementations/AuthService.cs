@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using AuthenticationWithJWT.Data;
 using AuthenticationWithJWT.Models;
 using AuthenticationWithJWT.Requests;
@@ -38,7 +39,7 @@ public class AuthService(IPasswordHasher<AppUser> hasher,AppDbContext context,IJ
         };
     }
 
-    public async Task<TokenResponse> GetTokenAsync(LoginCredentials credentials)
+    public async Task<AuthResult> GetTokenAsync(LoginCredentials credentials)
     {
         var user =await context.Users.FirstOrDefaultAsync(x=>x.Email==credentials.Email);
         if (user == null)
@@ -51,6 +52,22 @@ public class AuthService(IPasswordHasher<AppUser> hasher,AppDbContext context,IJ
             return null;
         }
 
+        var authResult = new AuthResult();
+        var refreshTokens = user.RefreshTokens;
+        if (refreshTokens.Any(x=>x.IsActive))
+        {
+            var refreshToken = refreshTokens.First(x=>x.IsActive);
+            authResult.RefreshToken = refreshToken.Token;
+            authResult.RefreshTokenExpiration = refreshToken.ExpiresOn;
+        }
+        else
+        {
+            var refreshToken = GenerateRefreshToken();
+            authResult.RefreshToken = refreshToken.Token;
+            authResult.RefreshTokenExpiration = refreshToken.ExpiresOn;
+            user.RefreshTokens.Add(refreshToken);
+            await context.SaveChangesAsync();
+        }
         var tokenRequest = new TokenRequest
         {
             Id=user.Id,
@@ -61,7 +78,80 @@ public class AuthService(IPasswordHasher<AppUser> hasher,AppDbContext context,IJ
             Permissions=user.Permissions?? new List<string>(),
             Roles=user.Roles?? new List<string>(),
         };
-        return await jwtTokenProvider.GenerateTokenAsync(tokenRequest);
+        var accessToken = await jwtTokenProvider.GenerateTokenAsync(tokenRequest);
+        authResult.AccessToken = accessToken.Token;
+        authResult.AccessTokenExpiration= accessToken.Expires;
+        
+        return authResult;
     }
+    
+    public async Task<AuthResult> RefreshTokenAsync(string token)
+    {
+        var user = await context.Users.FirstOrDefaultAsync(x=>x.RefreshTokens.Any(r=>r.Token==token));
+        if (user == null)
+        {
+            return null;            
+        }
+        var refreshToken = user.RefreshTokens.First(x=>x.Token==token);
+        if (!refreshToken.IsActive)
+        {
+            return null;
+        }
+        refreshToken.RevokedOn= DateTime.UtcNow;
+        var authResult = new AuthResult();
+        var newRefreshToken = GenerateRefreshToken();
+        authResult.RefreshToken = newRefreshToken.Token;
+        authResult.RefreshTokenExpiration = newRefreshToken.ExpiresOn;
+        user.RefreshTokens.Add(newRefreshToken);
+        await context.SaveChangesAsync();
+
+        var tokenRequest = new TokenRequest
+        {
+            Id=user.Id,
+            BirthDate = user.BirthDate,
+            Email=user.Email!,
+            FirstName=user.FirstName!,
+            LastName=user.LastName!,
+            Permissions=user.Permissions?? new List<string>(),
+            Roles=user.Roles?? new List<string>(),
+        };
+        var accessToken = await jwtTokenProvider.GenerateTokenAsync(tokenRequest);
+        authResult.AccessToken = accessToken.Token;
+        authResult.AccessTokenExpiration= accessToken.Expires;    
+
+        return authResult;
+    }
+    
+    public async Task<bool> RevokeTokenAsync(string token)
+    {
+        var user = await context.Users.FirstOrDefaultAsync(x => x.RefreshTokens.Any(x => x.Token == token));
+        if (user==null)
+        {
+            return false;
+        }
+        var refreshToken = user.RefreshTokens.Single(x => x.Token == token);
+        if (!refreshToken.IsActive)
+            return false;
+
+        refreshToken.RevokedOn = DateTime.UtcNow;
+        await context.SaveChangesAsync();
+        return true;
+    }
+    
+    private RefreshToken GenerateRefreshToken()
+    {
+        string token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
+
+        return new RefreshToken
+        {
+            Token = token,
+            CreatedOn = DateTime.UtcNow,
+            ExpiresOn = DateTime.UtcNow.AddHours(12)
+        };
+    }
+
+
 }
+
+
 

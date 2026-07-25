@@ -10,4 +10,5 @@ public class AppUser
     public string? PasswordHash {get;set;}
     public List<string>? Roles {get;set;} = [];
     public List<string>? Permissions {get;set;} = [];
+    public List<RefreshToken> RefreshTokens {get;set;} = [];
 }
