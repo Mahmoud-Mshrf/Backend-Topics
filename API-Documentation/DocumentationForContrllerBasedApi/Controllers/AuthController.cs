@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 
 namespace DocumentationForContrllerBasedApi.Controllers;
-
+[ApiVersion("1.0")]
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController(IAuthService authService):ControllerBase

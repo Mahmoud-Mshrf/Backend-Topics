@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentationForContrllerBasedApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+046bb592c314d50e49ba5cf4aff153bddb5884f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac11f1475fb596e1a106f1a10e641b2b725ce271")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentationForContrllerBasedApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentationForContrllerBasedApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

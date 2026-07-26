@@ -2,6 +2,7 @@ using System.Text;
 using DocumentationForContrllerBasedApi.Data;
 using DocumentationForContrllerBasedApi.Helpers;
 using DocumentationForContrllerBasedApi.Models;
+using DocumentationForContrllerBasedApi.OpenApi.Transformers;
 using DocumentationForContrllerBasedApi.Services.Implementations;
 using DocumentationForContrllerBasedApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -70,6 +71,22 @@ public static class Dependencies
             options.DefaultApiVersion= new ApiVersion(1,0);
             options.AssumeDefaultVersionWhenUnspecified=true;
         });
+        string[] versions = ["v1", "v2"];
+
+        foreach (var version in versions)
+        {
+            services.AddOpenApi(version, options =>
+            {
+               // Versioning config
+                options.AddDocumentTransformer<VersionInfoTransformer>();
+
+               // Security Scheme config
+
+                options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+                options.AddOperationTransformer<BearerSecuritySchemeTransformer>();
+            });
+        }
+        
         return services;
     }
 }

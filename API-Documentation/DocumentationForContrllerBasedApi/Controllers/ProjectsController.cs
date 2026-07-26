@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace DocumentationForContrllerBasedApi.Controllers;
-
+[ApiVersion("1.0")]
 [ApiController]
 [Route("api/projects")]
 [Authorize] // Apply Authorize at the controller level to ensure all actions require authentication by default
