@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yLCyOqIkQW8=",
+  "dgSpecHash": "ZauFi8r3DME=",
   "success": true,
   "projectFilePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\Performance\\Caching\\Distributed_Caching\\Distributed_Caching.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.10\\microsoft.entityframeworkcore.relational.10.0.10.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\10.0.10\\microsoft.entityframeworkcore.sqlserver.10.0.10.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.10\\microsoft.entityframeworkcore.tools.10.0.10.nupkg.sha512",
+    "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.extensions.caching.hybrid\\10.8.0\\microsoft.extensions.caching.hybrid.10.8.0.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.extensions.caching.stackexchangeredis\\10.0.10\\microsoft.extensions.caching.stackexchangeredis.10.0.10.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.10\\microsoft.extensions.dependencymodel.10.0.10.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\microsoft.identity.client\\4.73.1\\microsoft.identity.client.4.73.1.nupkg.sha512",
