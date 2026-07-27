@@ -1,4 +1,5 @@
 using DocumentationForContrllerBasedApi;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,5 +29,4 @@ if (app.Environment.IsDevelopment())
 
     app.MapScalarApiReference();
 }
-app.MapGet("/", () => "Hello World!");
 app.Run();

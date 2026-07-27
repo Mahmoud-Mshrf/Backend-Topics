@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using DocumentationForContrllerBasedApi.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ public class ProjectsController : ControllerBase
     {
         return Ok(new
         {
-            Message = "Read List of project",
+            Message = "Read List of project From V2",
             UserInfo = GetUserInfo(),
             Permission = Permission.Project.Read // Using constant for consistency
         });

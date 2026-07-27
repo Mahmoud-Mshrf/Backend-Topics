@@ -1,4 +1,5 @@
 using System.Text;
+using Asp.Versioning;
 using DocumentationForContrllerBasedApi.Data;
 using DocumentationForContrllerBasedApi.Helpers;
 using DocumentationForContrllerBasedApi.Models;
@@ -7,8 +8,6 @@ using DocumentationForContrllerBasedApi.Services.Implementations;
 using DocumentationForContrllerBasedApi.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -19,6 +18,7 @@ public static class Dependencies
     public static IServiceCollection AddDependencies(this IServiceCollection services , IConfiguration configuration)
     {
         services.AddControllers();
+        services.AddEndpointsApiExplorer();
         services.Configure<JwtOptions>(configuration.GetSection("JWT_Options"));
         var jwtOptions = configuration.GetSection("JWT_Options").Get<JwtOptions>();
         services.AddAuthentication(authOptions =>
@@ -64,12 +64,27 @@ public static class Dependencies
         services.AddScoped<IJwtTokenProvider,JwtTokenProvider>();
         services.AddScoped<IAuthService,AuthService>();
         services.AddScoped<IPasswordHasher<AppUser>,PasswordHasher<AppUser>>();
-        services.AddApiVersioning(options =>
+        // services.AddApiVersioning(options =>
+        // {
+        //     options.ApiVersionReader = ApiVersionReader.Combine(
+        //         new MediaTypeApiVersionReader("v"),
+        //         new QueryStringApiVersionReader("api-version"));
+        //     options.ReportApiVersions=true;
+        //     options.DefaultApiVersion= new ApiVersion(1,0);
+        //     options.AssumeDefaultVersionWhenUnspecified=true;
+        // });
+        services
+        .AddApiVersioning(options =>
         {
-            options.ApiVersionReader = new MediaTypeApiVersionReader("v");
-            options.ReportApiVersions=true;
-            options.DefaultApiVersion= new ApiVersion(1,0);
-            options.AssumeDefaultVersionWhenUnspecified=true;
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.ReportApiVersions = true;
+            options.ApiVersionReader= new QueryStringApiVersionReader("api-version");
+        })
+        .AddApiExplorer(options =>
+        {
+            options.GroupNameFormat = "'v'V";
+            options.SubstituteApiVersionInUrl = false;
         });
         string[] versions = ["v1", "v2"];
 
@@ -78,12 +93,11 @@ public static class Dependencies
             services.AddOpenApi(version, options =>
             {
                // Versioning config
-                options.AddDocumentTransformer<VersionInfoTransformer>();
-
+                options.AddDocumentTransformer<VersionInfoTransformer>();     
                // Security Scheme config
-
                 options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
                 options.AddOperationTransformer<BearerSecuritySchemeTransformer>();
+                options.AddOperationTransformer<ApiVersionDefaultTransformer>();
             });
         }
         
