@@ -18,7 +18,17 @@ public class ProductService(AppDbContext context,IMemoryCache cache) : IProductS
         {
             x.Size = 1;
             x.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30);
+            x.SlidingExpiration = TimeSpan.FromMinutes(5);
+/*
+* AbsoluteExpirationRelativeToNow:** Sets a fixed lifetime for a cached item starting from the moment it is added to the cache. Once that time is reached, 
+  the item is removed even if it has been accessed many times.
+  For example, if you cache a list of products with an absolute expiration of **30 minutes**, it will expire exactly 30 minutes after being cached, whether it was requested once or a hundred times.
 
+* SlidingExpiration:** Sets an inactivity timeout for a cached item instead of a fixed lifetime.
+  Every time the item is accessed, the expiration timer is reset, so it remains in the cache as long as it continues to be used.
+  For example, if you set a sliding expiration of **30 minutes** and users access the cached products every 10 minutes, the cache will never expire; however, if no one requests the products for 30 minutes, the item will be removed from the cache.
+
+*/
             var entities = await context.Products.ToListAsync();
             var responses =  entities?.Select(p => ProductResponse.FromModel(p)).ToList() ?? [];
             return responses;
