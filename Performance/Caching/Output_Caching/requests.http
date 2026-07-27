@@ -11,6 +11,9 @@ GET {{baseUrl}}/api/products/mini-get?page=1&size=10
 ###
 GET {{baseUrl}}/api/products/{{productId}}
 
+###
+GET {{baseUrl}}/api/products/mini-get/{{productId}}
+
 ### 
 POST {{baseUrl}}/api/products
 Content-Type: application/json

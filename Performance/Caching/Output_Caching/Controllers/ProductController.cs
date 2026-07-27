@@ -11,7 +11,7 @@ namespace Output_Caching.Controllers;
 public class ProductsController(IProductService productService, IOutputCacheStore cache) : ControllerBase
 {
     [HttpGet]
-    [OutputCache(Duration = 10)]
+    [OutputCache(Duration =10,VaryByQueryKeys = ["page","size"])]
     public async Task<IActionResult> Get(int page = 1, int pageSize = 10)
     {
         Console.WriteLine("Controller Action visited");
@@ -22,6 +22,8 @@ public class ProductsController(IProductService productService, IOutputCacheStor
     }
 
     [HttpGet("{productId:int}", Name = nameof(GetById))]
+    // [OutputCache(VaryByRouteValueNames =["productId"],Duration =10)]
+    [OutputCache(PolicyName ="Single-Product")]
     public async Task<ActionResult<ProductResponse>> GetById(int productId)
     {
         Console.WriteLine("Controller Action (Get By Id) visited");
