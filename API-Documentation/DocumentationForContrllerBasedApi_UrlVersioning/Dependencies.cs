@@ -73,18 +73,17 @@ public static class Dependencies
         //     options.DefaultApiVersion= new ApiVersion(1,0);
         //     options.AssumeDefaultVersionWhenUnspecified=true;
         // });
-        services
-        .AddApiVersioning(options =>
+        services.AddApiVersioning(options =>
         {
             options.DefaultApiVersion = new ApiVersion(1, 0);
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ReportApiVersions = true;
-            options.ApiVersionReader= new QueryStringApiVersionReader("api-version");
+            options.ApiVersionReader = new UrlSegmentApiVersionReader();
         })
         .AddApiExplorer(options =>
         {
             options.GroupNameFormat = "'v'V";
-            options.SubstituteApiVersionInUrl = false;
+            options.SubstituteApiVersionInUrl = true; // <-- flip this to true now
         });
         string[] versions = ["v1", "v2"];
 

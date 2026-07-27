@@ -3437,11 +3437,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi\\DocumentationForContrllerBasedApi.csproj",
-      "projectName": "DocumentationForContrllerBasedApi",
-      "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi\\DocumentationForContrllerBasedApi.csproj",
+      "projectUniqueName": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi_UrlVersioning\\DocumentationForContrllerBasedApi_UrlVersioning.csproj",
+      "projectName": "DocumentationForContrllerBasedApi_UrlVersioning",
+      "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi_UrlVersioning\\DocumentationForContrllerBasedApi_UrlVersioning.csproj",
       "packagesPath": "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi\\obj\\",
+      "outputPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi_UrlVersioning\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

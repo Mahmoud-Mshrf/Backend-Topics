@@ -7,7 +7,7 @@ using System.Security.Claims;
 namespace DocumentationForContrllerBasedApi_UrlVersioning.Controllers.V2;
 [ApiVersion("2.0")]
 [ApiController]
-[Route("api/projects")]
+[Route("api/v{version:apiVersion}/projects")]
 [Authorize] // Apply Authorize at the controller level to ensure all actions require authentication by default
 public class ProjectsController : ControllerBase
 {

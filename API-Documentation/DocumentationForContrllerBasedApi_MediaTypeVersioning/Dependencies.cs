@@ -73,13 +73,12 @@ public static class Dependencies
         //     options.DefaultApiVersion= new ApiVersion(1,0);
         //     options.AssumeDefaultVersionWhenUnspecified=true;
         // });
-        services
-        .AddApiVersioning(options =>
+        services.AddApiVersioning(options =>
         {
             options.DefaultApiVersion = new ApiVersion(1, 0);
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ReportApiVersions = true;
-            options.ApiVersionReader= new QueryStringApiVersionReader("api-version");
+            options.ApiVersionReader = new MediaTypeApiVersionReader("v");
         })
         .AddApiExplorer(options =>
         {
@@ -97,7 +96,7 @@ public static class Dependencies
                // Security Scheme config
                 options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
                 options.AddOperationTransformer<BearerSecuritySchemeTransformer>();
-                options.AddOperationTransformer<ApiVersionDefaultTransformer>();
+                // options.AddOperationTransformer<ApiVersionDefaultTransformer>();
             });
         }
         

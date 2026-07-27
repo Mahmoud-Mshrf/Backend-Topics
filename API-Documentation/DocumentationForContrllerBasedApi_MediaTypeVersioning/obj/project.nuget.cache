@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ij7QvE5PI/s=",
+  "dgSpecHash": "XJuMOvkVpaY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi\\DocumentationForContrllerBasedApi.csproj",
+  "projectFilePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi_MediaTypeVersioning\\DocumentationForContrllerBasedApi_MediaTypeVersioning.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\asp.versioning.abstractions\\10.0.0\\asp.versioning.abstractions.10.0.0.nupkg.sha512",
     "C:\\Users\\Mahmoud-PC\\.nuget\\packages\\asp.versioning.http\\10.0.0\\asp.versioning.http.10.0.0.nupkg.sha512",
@@ -66,9 +66,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi\\DocumentationForContrllerBasedApi.csproj",
+      "projectPath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi_MediaTypeVersioning\\DocumentationForContrllerBasedApi_MediaTypeVersioning.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi\\DocumentationForContrllerBasedApi.csproj",
+      "filePath": "C:\\Users\\Mahmoud-PC\\Desktop\\Metigator Course\\API-Documentation\\DocumentationForContrllerBasedApi_MediaTypeVersioning\\DocumentationForContrllerBasedApi_MediaTypeVersioning.csproj",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"

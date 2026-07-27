@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentationForContrllerBasedApi_MediaTypeVersioning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab64abad8688519cde690d4161b1989041bbb368")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0aec75835070dfb4e24e4027781c7c5fa96aa8a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentationForContrllerBasedApi_MediaTypeVersioning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentationForContrllerBasedApi_MediaTypeVersioning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
