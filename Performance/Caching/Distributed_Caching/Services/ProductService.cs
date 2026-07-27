@@ -1,18 +1,35 @@
+using System.Text.Json;
 using Distributed_Caching.Data;
 using Distributed_Caching.Models;
 using Distributed_Caching.Requests;
 using Distributed_Caching.Responses;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Distributed_Caching.Services;
 
-public class ProductService(AppDbContext context) : IProductService
+public class ProductService(AppDbContext context,IDistributedCache cache) : IProductService
 {
+    private const string cacheKey = "Products";
     public async Task<List<ProductResponse>> GetProductsAsync()
     {
-        var products = await context.Products.ToListAsync();
-        return products?.Select(p => ProductResponse.FromModel(p)).ToList() ?? [];
+        var data = await cache.GetStringAsync(cacheKey);
         
+        if (data is not null)
+        {
+            System.Console.WriteLine("Cache visited");
+            return JsonSerializer.Deserialize<List<ProductResponse>>(data)!;  
+        }
+
+        var entities = await context.Products.ToListAsync();
+        var products = entities?.Select(p => ProductResponse.FromModel(p)).ToList() ?? [];
+        var jsonData = JsonSerializer.Serialize(products);
+        var options = new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow= TimeSpan.FromMinutes(30)
+        };
+        await cache.SetStringAsync(cacheKey,jsonData,options);
+        return products;
     }
 
     public async Task<ProductResponse?> GetProductByIdAsync(int productId)
@@ -32,7 +49,7 @@ public class ProductService(AppDbContext context) : IProductService
         context.Products.Add(product);
 
         await context.SaveChangesAsync();
-
+        await cache.RemoveAsync(cacheKey); // invalidate cache
         return ProductResponse.FromModel(product);
     }
 
@@ -46,6 +63,7 @@ public class ProductService(AppDbContext context) : IProductService
         existingProduct.Price = request.Price;
 
         await context.SaveChangesAsync();
+        await cache.RemoveAsync(cacheKey); // invalidate cache
     }
 
     public async Task DeleteProductAsync(int id)
@@ -56,5 +74,6 @@ public class ProductService(AppDbContext context) : IProductService
         context.Products.Remove(product);
 
         await context.SaveChangesAsync();
+        await cache.RemoveAsync(cacheKey); // invalidate cache
     }
 }

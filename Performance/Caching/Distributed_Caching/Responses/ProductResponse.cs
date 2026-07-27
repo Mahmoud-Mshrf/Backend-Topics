@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Distributed_Caching.Models;
 
 namespace Distributed_Caching.Responses;
@@ -7,7 +8,7 @@ public class ProductResponse
     public int ProductId { get; set; }
     public string? Name { get; set; }
     public decimal Price { get; set; }
-
+    [JsonConstructor]
     private ProductResponse() { }
 
     public static ProductResponse FromModel(Product? product)
