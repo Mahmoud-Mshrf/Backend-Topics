@@ -1,0 +1,80 @@
+@baseUrl = http://localhost:5119
+
+### Register 
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "task-Permissions",
+  "lastName": "task-Permissions",
+  "email": "task.montgomery@example.com",
+  "password": "P@ssw0rd123",
+  "birthDate": "1998-05-14"
+}
+
+### Register ### SuperManager
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "supermanager@test.com",
+  "password": "Super123!"
+}
+
+### Register ### Manager
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "manager@test.com",
+  "password": "Manager123!"
+}
+
+### Register ### Employee
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "employee@test.com",
+  "password": "Employee123!"
+}
+
+###############################################################
+### Refresh Token (Valid Cookie)
+POST {{baseUrl}}/api/auth/refresh-token
+Cookie: RefreshToken=zC5Mhy8P8CbGcKCjbbqDpeC4OuWOhunMfVhnHMj/ijiK/dkb2JBi5h3Sk4c2O+dNMyqFcOXjZG9l9v+cLbRZwA==
+
+###
+
+###############################################################
+### Refresh Token (Missing Cookie)
+POST {{baseUrl}}/api/auth/refresh-token
+
+###
+
+###############################################################
+### Refresh Token (Invalid Cookie)
+POST {{baseUrl}}/api/auth/refresh-token
+Cookie: RefreshToken=INVALID_REFRESH_TOKEN
+
+###
+
+###############################################################
+### Revoke Token (Valid Cookie)
+POST {{baseUrl}}/api/auth/revoke-token
+Cookie: RefreshToken=YOUR_REFRESH_TOKEN_HERE
+
+###
+
+###############################################################
+### Revoke Token (Missing Cookie)
+POST {{baseUrl}}/api/auth/revoke-token
+
+###
+
+###############################################################
+### Revoke Token (Already Revoked / Invalid Token)
+POST {{baseUrl}}/api/auth/revoke-token
+Cookie: RefreshToken=INVALID_REFRESH_TOKEN
+
+###

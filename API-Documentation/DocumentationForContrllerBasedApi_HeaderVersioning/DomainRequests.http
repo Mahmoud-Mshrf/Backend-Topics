@@ -1,0 +1,71 @@
+@baseUrl = http://localhost:5119
+
+@projectId = f5aae296-97dc-4a2b-a15a-b20ce4780d3a
+@taskId = b7cc98df-bcce-4bed-be26-d734797549c8
+
+
+### Get All Projects
+GET {{baseUrl}}/api/projects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMzMzMzMzMy0zMzMzLTMzMzMtMzMzMy0zMzMzMzMzMzMzMzMiLCJnaXZlbl9uYW1lIjoiVXNlciIsImZhbWlseV9uYW1lIjoiRW1wbG95ZWUiLCJiaXJ0aGRhdGUiOiIxLzEvMjAwMCIsImVtYWlsIjoiZW1wbG95ZWVAdGVzdC5jb20iLCJyb2xlIjoiZW1wbG95ZWUiLCJQZXJtaXNzaW9uIjpbInRhc2s6Y3JlYXRlIiwidGFzazpyZWFkIiwidGFzazp1cGRhdGUiLCJ0YXNrOmRlbGV0ZSIsInRhc2s6YXNzaWduX3VzZXIiLCJ0YXNrOnVwZGF0ZV9zdGF0dXMiLCJ0YXNrOmNvbW1lbnQiXSwibmJmIjoxNzg0OTY2ODI5LCJleHAiOjE3ODQ5Njc3MjksImlhdCI6MTc4NDk2NjgyOSwiaXNzIjoiTG9jYWxob3N0IiwiYXVkIjoiTG9jYWxob3N0In0.G8KTWhw0dgyzjOuG4isCUkP_dEkmOFgrxX8uqrVbB8g
+###
+
+### Get Project By Id
+GET {{baseUrl}}/api/projects/{{projectId}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMTExMTExMS0xMTExLTExMTEtMTExMS0xMTExMTExMTExMTEiLCJnaXZlbl9uYW1lIjoiTWFuYWdlciIsImZhbWlseV9uYW1lIjoiU3VwZXIiLCJiaXJ0aGRhdGUiOiIxLzEvMTk5NSIsImVtYWlsIjoic3VwZXJtYW5hZ2VyQHRlc3QuY29tIiwicm9sZSI6InN1cGVybWFuYWdlciIsIlBlcm1pc3Npb24iOlsicHJvamVjdDpjcmVhdGUiLCJwcm9qZWN0OnJlYWQiLCJwcm9qZWN0OnVwZGF0ZSIsInByb2plY3Q6ZGVsZXRlIiwicHJvamVjdDphc3NpZ25fbWVtYmVyIiwicHJvamVjdDptYW5hZ2VfYnVkZ2V0IiwidGFzazpjcmVhdGUiLCJ0YXNrOnJlYWQiLCJ0YXNrOnVwZGF0ZSIsInRhc2s6ZGVsZXRlIiwidGFzazphc3NpZ25fdXNlciIsInRhc2s6dXBkYXRlX3N0YXR1cyIsInRhc2s6Y29tbWVudCJdLCJuYmYiOjE3ODQ5NjY2NzAsImV4cCI6MTc4NDk2NzU3MCwiaWF0IjoxNzg0OTY2NjcwLCJpc3MiOiJMb2NhbGhvc3QiLCJhdWQiOiJMb2NhbGhvc3QifQ.wJkEyZBy6phTbJhaKVmRthoTnqT-buUezkrkMTYMGSo
+
+###
+
+### Create Project
+POST {{baseUrl}}/api/projects
+Content-Type:application/json
+###
+
+### Update Project
+PUT {{baseUrl}}/api/projects/{{projectId}}
+Content-Type:application/json
+###
+
+### Delete Project
+DELETE {{baseUrl}}/api/projects/{{projectId}}
+
+###
+
+### Assign Member To Project
+POST {{baseUrl}}/api/projects/{{projectId}}/members
+
+###
+
+### Get Project Budget
+GET {{baseUrl}}/api/projects/{{projectId}}/budget
+
+###
+
+### Get Task
+GET {{baseUrl}}/api/projects/tasks/{{taskId}}
+
+###
+
+### Create Task
+POST {{baseUrl}}/api/projects/tasks
+Content-Type:application/json
+###
+
+### Assign User To Task
+POST {{baseUrl}}/api/projects/tasks/{{taskId}}/assign
+
+###
+
+### Update Task
+PUT {{baseUrl}}/api/projects/tasks/{{taskId}}
+
+###
+
+### Delete Task
+DELETE {{baseUrl}}/api/projects/tasks/{{taskId}}
+
+###
+
+### Update Task Status
+PUT {{baseUrl}}/api/projects/tasks/{{taskId}}/status
+
+
