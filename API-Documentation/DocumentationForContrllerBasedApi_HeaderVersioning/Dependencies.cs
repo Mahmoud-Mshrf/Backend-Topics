@@ -1,5 +1,6 @@
 using System.Text;
 using Asp.Versioning;
+using DocumentationForContrllerBasedApi.OpenApi.Transformers;
 using DocumentationForContrllerBasedApi_HeaderVersioning.Data;
 using DocumentationForContrllerBasedApi_HeaderVersioning.Helpers;
 using DocumentationForContrllerBasedApi_HeaderVersioning.Models;
@@ -73,18 +74,17 @@ public static class Dependencies
         //     options.DefaultApiVersion= new ApiVersion(1,0);
         //     options.AssumeDefaultVersionWhenUnspecified=true;
         // });
-        services
-        .AddApiVersioning(options =>
+        services.AddApiVersioning(options =>
         {
             options.DefaultApiVersion = new ApiVersion(1, 0);
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ReportApiVersions = true;
-            options.ApiVersionReader= new QueryStringApiVersionReader("api-version");
+            options.ApiVersionReader = new HeaderApiVersionReader("X-Api-Version");
         })
         .AddApiExplorer(options =>
         {
             options.GroupNameFormat = "'v'V";
-            options.SubstituteApiVersionInUrl = false;
+            options.SubstituteApiVersionInUrl = false; // no version token in the URL
         });
         string[] versions = ["v1", "v2"];
 

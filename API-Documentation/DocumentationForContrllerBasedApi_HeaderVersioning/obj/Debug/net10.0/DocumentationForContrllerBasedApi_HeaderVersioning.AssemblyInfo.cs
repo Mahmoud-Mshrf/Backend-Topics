@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentationForContrllerBasedApi_HeaderVersioning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab64abad8688519cde690d4161b1989041bbb368")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5370e497a42b8b9b099723964d85cc6dc53f7826")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentationForContrllerBasedApi_HeaderVersioning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentationForContrllerBasedApi_HeaderVersioning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

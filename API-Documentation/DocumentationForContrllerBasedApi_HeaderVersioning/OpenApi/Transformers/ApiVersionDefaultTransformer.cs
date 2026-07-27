@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi;
 using System.Text.Json.Nodes;
 
-namespace DocumentationForContrllerBasedApi_HeaderVersioning.OpenApi.Transformers;
+namespace DocumentationForContrllerBasedApi.OpenApi.Transformers;
 
 internal sealed class ApiVersionDefaultTransformer : IOpenApiOperationTransformer
 {
@@ -15,7 +15,7 @@ internal sealed class ApiVersionDefaultTransformer : IOpenApiOperationTransforme
             return Task.CompletedTask;
 
         var versionParam = operation.Parameters
-            .FirstOrDefault(p => p.Name == "api-version");
+        .FirstOrDefault(p => p.Name == "X-Api-Version");
 
         if (versionParam is OpenApiParameter concreteParam)
         {
