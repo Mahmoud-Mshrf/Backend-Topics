@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:5182
+@orderid = 2733e2df-c0e8-4b04-af91-67b757632b65
+POST {{baseUrl}}/api/orders/{{orderid}}
+
