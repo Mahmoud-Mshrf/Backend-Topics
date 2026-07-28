@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("M06.GroupingServices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15907c022e763b76ecd7f57f744e109952c92181")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b632be595700c5ec96ac426095290117f1dd89e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("M06.GroupingServices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("M06.GroupingServices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
