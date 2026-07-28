@@ -1,0 +1,15 @@
+### 1- Build Stage :
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS Build
+WORKDIR /source
+COPY PaymentServiceApi/*.csproj PaymentServiceApi/
+RUN dotnet restore PaymentServiceApi/PaymentServiceApi.csproj
+COPY PaymentServiceApi/. ./PaymentServiceApi
+WORKDIR /source/PaymentServiceApi
+RUN dotnet publish -c Release -o /app --no-restore
+
+### Final stage (final image)
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 As Final
+WORKDIR /app
+COPY --from=Build /app ./
+ENTRYPOINT [ "dotnet","PaymentServiceApi.dll" ]
+

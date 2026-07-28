@@ -1,0 +1,555 @@
+1- create docker file with build instructions.
+2- build :
+    docker build -t paymentservice -f PaymentServiceApi/dockerfile .
+3- create docker file with build instructions.
+4- build :
+    docker build -t orderservice -f OrderServiceApi/dockerfile .
+5- create network :
+    docker network create OrderPaymentSystem
+6- Create the container and run it:
+    docker run -d -p 5039:80 --name paymentservice --network OrderPaymentSystem -e ASPNETCORE_ENVIRONMENT=Development -e ASPNETCORE_URLS=http://+:80 paymentservice 
+
+7- Create the container and run it:
+    docker run -d -p 5229:80 --name orderservice --network OrderPaymentSystem -e ASPNETCORE_ENVIRONMENT=Development -e ASPNETCORE_URLS=http://+:80 orderservice
+ 
+OrderServiceApi dockerFile content:
+### 1- Build Stage :
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS Build
+WORKDIR /source
+COPY OrderServiceApi/*.csproj OrderServiceApi/
+RUN dotnet restore OrderServiceApi/OrderServiceApi.csproj
+COPY OrderServiceApi/. ./OrderServiceApi
+WORKDIR /source/OrderServiceApi
+RUN dotnet publish -c Release -o /app --no-restore
+
+### Final stage (final image)
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 As Final
+WORKDIR /app
+COPY --from=Build /app ./
+ENTRYPOINT [ "dotnet","OrderServiceApi.dll" ]
+
+PaymentServiceApi dockerFile Content:
+### 1- Build Stage :
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS Build
+WORKDIR /source
+COPY PaymentServiceApi/*.csproj PaymentServiceApi/
+RUN dotnet restore PaymentServiceApi/PaymentServiceApi.csproj
+COPY PaymentServiceApi/. ./PaymentServiceApi
+WORKDIR /source/PaymentServiceApi
+RUN dotnet publish -c Release -o /app --no-restore
+
+### Final stage (final image)
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 As Final
+WORKDIR /app
+COPY --from=Build /app ./
+ENTRYPOINT [ "dotnet","PaymentServiceApi.dll" ]
+
+##########################################################
+Explanation :
+I like that you created this instruction file. This is actually the right way to learn Docker: **write down the workflow you understand**, not just copy commands.
+
+Your workflow is mostly correct. I would only adjust it slightly and explain **why each step exists** so next time you can rebuild the process from understanding.
+
+---
+
+# Containerizing Two ASP.NET Core Services Workflow
+
+## Phase 1: Create Dockerfiles
+
+Each service needs its own Dockerfile.
+
+The Dockerfile has two responsibilities:
+
+1. **Build the application**
+
+   * Install SDK
+   * Restore NuGet packages
+   * Compile the application
+   * Publish release files
+
+2. **Create the runtime image**
+
+   * Use smaller ASP.NET runtime image
+   * Copy published files
+   * Start the application
+
+---
+
+## Phase 2: Build images
+
+Example:
+
+```text
+PaymentService project
+        |
+        ▼
+PaymentService Dockerfile
+        |
+        ▼
+Docker Image
+(paymentservice)
+```
+
+The image is a **template**.
+
+It is not running yet.
+
+Think of it like a class in C#.
+
+```
+Image = Class
+Container = Object
+```
+
+Your commands:
+
+```
+docker build -t paymentservice -f PaymentServiceApi/dockerfile .
+```
+
+and
+
+```
+docker build -t orderservice -f OrderServiceApi/dockerfile .
+```
+
+create two images:
+
+```
+paymentservice image
+orderservice image
+```
+
+Check them:
+
+```
+docker images
+```
+
+---
+
+# Phase 3: Create network
+
+Before running containers, create a network.
+
+Why?
+
+Because your services need to communicate:
+
+```
+OrderService
+      |
+      |
+      ▼
+PaymentService
+```
+
+Containers are isolated by default.
+
+A Docker network creates a private communication area:
+
+```
+OrderPaymentSystem Network
+
++----------------+
+| OrderService   |
++----------------+
+
++----------------+
+| PaymentService |
++----------------+
+
++----------------+
+| SQL Server     |
++----------------+
+```
+
+Inside this network, containers can find each other using names:
+
+```
+paymentservice
+sqlserver
+```
+
+instead of IP addresses.
+
+---
+
+# Phase 4: Run containers
+
+Now you create containers from images.
+
+## PaymentService
+
+Your command:
+
+```
+docker run -d \
+-p 5039:80 \
+--name paymentservice \
+--network OrderPaymentSystem \
+-e ASPNETCORE_ENVIRONMENT=Development \
+-e ASPNETCORE_URLS=http://+:80 \
+paymentservice
+```
+
+Let's understand every part.
+
+---
+
+## `docker run`
+
+Meaning:
+
+> Create a container from an image and start it.
+
+---
+
+## `-d`
+
+Detached mode.
+
+The container runs in the background.
+
+Without it, your terminal is attached to the application logs.
+
+---
+
+## `--name paymentservice`
+
+Container name.
+
+This is important because other containers use it.
+
+Example:
+
+OrderService can call:
+
+```
+http://paymentservice
+```
+
+Docker resolves this name automatically.
+
+---
+
+## `--network OrderPaymentSystem`
+
+Put the container inside your private Docker network.
+
+Without this:
+
+```
+OrderService ❌ PaymentService
+```
+
+With this:
+
+```
+OrderService ✅ PaymentService
+```
+
+---
+
+## `-e ASPNETCORE_ENVIRONMENT=Development`
+
+Sets the ASP.NET Core environment.
+
+This controls which configuration files load:
+
+```
+appsettings.json
+
++
+ 
+appsettings.Development.json
+```
+
+---
+
+## `-e ASPNETCORE_URLS=http://+:80`
+
+This tells ASP.NET Core:
+
+"Listen on port 80 inside the container."
+
+The application becomes:
+
+```
+Container
+
+Port 80
+ |
+ |
+ASP.NET Core
+```
+
+---
+
+# The most important part
+
+## `-p 5039:80`
+
+This is port mapping.
+
+The format is:
+
+```
+HOST_PORT:CONTAINER_PORT
+```
+
+So:
+
+```
+5039:80
+```
+
+means:
+
+```
+Your computer
+
+localhost:5039
+
+        |
+        |
+        ▼
+
+Container
+
+port 80
+```
+
+The user calls:
+
+```
+http://localhost:5039
+```
+
+Docker forwards it to:
+
+```
+paymentservice:80
+```
+
+---
+
+# OrderService
+
+Same idea:
+
+```
+-p 5229:80
+```
+
+means:
+
+```
+localhost:5229
+
+       |
+
+OrderService container
+
+       |
+
+port 80
+```
+
+---
+
+# Your Dockerfiles
+
+Your Dockerfiles are correct.
+
+The flow:
+
+```
+SDK image
+    |
+    |
+dotnet restore
+    |
+    |
+dotnet publish
+    |
+    |
+Runtime image
+    |
+    |
+Application starts
+```
+
+The reason you use two stages:
+
+## Build image
+
+Contains:
+
+```
+.NET SDK
+Compiler
+NuGet tools
+```
+
+Large.
+
+Only needed during building.
+
+---
+
+## Final image
+
+Contains:
+
+```
+.NET Runtime
+Your DLL files
+```
+
+Smaller.
+
+Used in production.
+
+---
+
+# I would add one missing section to your document
+
+## Troubleshooting checklist
+
+When something fails:
+
+### 1. Container running?
+
+```
+docker ps
+```
+
+---
+
+### 2. Application started?
+
+Look at logs:
+
+```
+docker logs container-name
+```
+
+Look for:
+
+```
+Now listening on:
+```
+
+This tells you the internal container port.
+
+---
+
+### 3. Port mapping correct?
+
+Example:
+
+Application:
+
+```
+Listening on 80
+```
+
+Docker:
+
+```
+5229:80
+```
+
+Correct.
+
+---
+
+Wrong:
+
+Application:
+
+```
+Listening on 8080
+```
+
+Docker:
+
+```
+5229:80
+```
+
+Wrong.
+
+---
+
+### 4. Service communication
+
+Inside Docker:
+
+Wrong:
+
+```
+http://localhost:5039
+```
+
+because localhost means the current container.
+
+Correct:
+
+```
+http://paymentservice
+```
+
+because Docker uses container names.
+
+---
+
+# One improvement to your workflow
+
+You are missing the SQL Server container step.
+
+Your real architecture is:
+
+```
+                Docker Network
+
++--------------+       +--------------+
+| OrderService | ----> | Payment      |
+| :80          |       | Service :80  |
++--------------+       +--------------+
+
+          |
+          |
+          ▼
+
++----------------+
+| SQL Server     |
+| sqlserver      |
++----------------+
+```
+
+So your full workflow should be:
+
+1. Create Dockerfiles.
+2. Build images.
+3. Create Docker network.
+4. Run SQL Server container.
+5. Run PaymentService container.
+6. Run OrderService container.
+7. Verify containers.
+8. Test APIs.
+
+---
+
+Overall, your document is good. The important thing is that you now understand the concepts behind:
+
+* Image vs Container
+* Container ports
+* Host ports
+* Networks
+* Container names
+* Configuration injection
+* Multi-stage Docker builds
+
+Those concepts transfer to almost any Dockerized application, not just this project.
