@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Structured_Logging")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8167299dd912f87bb65cf98f2e361c45e0a6909")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d68567b5c692248b654c55e329c6b954c907a26")]
 [assembly: System.Reflection.AssemblyProductAttribute("Structured_Logging")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Structured_Logging")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
