@@ -1,0 +1,13 @@
+@baseUrl = http://localhost:5187
+
+###
+GET {{baseUrl}}/api/products/
+
+
+###
+GET {{baseUrl}}/api/products/
+Accept-Encoding: br
+
+###
+GET {{baseUrl}}/api/products/
+Accept-Encoding: gzip
