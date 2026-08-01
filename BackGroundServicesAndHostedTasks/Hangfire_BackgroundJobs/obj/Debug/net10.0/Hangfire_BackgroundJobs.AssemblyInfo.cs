@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hangfire_BackgroundJobs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba6787a2b23f173df590b958f7817dcccab40aff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4892f31c9a5aaa678428d7eab17fcc333e6055ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hangfire_BackgroundJobs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hangfire_BackgroundJobs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
