@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using System.Security.AccessControl;
-
+//  A Hosted Service :
+//  is simply a class that starts automatically when the application starts and stops when the application shuts down.
 public class RemoveOrphansFilesBackgroundService(ILogger<RemoveOrphansFilesBackgroundService> logger) : BackgroundService
 {
     private readonly TimeSpan _interval = TimeSpan.FromSeconds(10);

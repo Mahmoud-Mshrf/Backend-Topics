@@ -1,0 +1,11 @@
+@baseUrl = http://localhost:5158
+
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+    "firstname":"Mahmoud",
+    "lastname":"Mshrf",
+    "email":"mahmoud@example.com",
+    "password":"Mahmoud12345"
+}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentationForContrllerBasedApi_UrlVersioning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c1e862596e459747c7fbe52e42cecccfbe90e76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba6787a2b23f173df590b958f7817dcccab40aff")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentationForContrllerBasedApi_UrlVersioning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentationForContrllerBasedApi_UrlVersioning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
