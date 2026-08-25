@@ -1,0 +1,42 @@
+# Build output
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
+*.rsuser
+*.sln.docstates
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# Test results
+TestResults/
+*.trx
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# ASP.NET Core HTTPS development certificates
+**/https/
